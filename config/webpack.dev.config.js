@@ -17,6 +17,14 @@ module.exports = {
         test: /\.jsx?/,
         use: 'babel-loader',
         include: [path.resolve(__dirname, '../src')]
+      },
+      {
+        test: /\.scss$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -35,6 +43,9 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(false)
+    })
   ]
 }

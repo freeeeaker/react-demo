@@ -7,7 +7,8 @@ import { hot } from 'react-hot-loader'
 // console.log(reactRouterDOM)
 import { Route, Link } from 'react-router-dom'
 
-import Main from './page/index'
+import Main from './page/Main'
+import TextOverflow from './page/TextOverflow'
 import { log } from './util/'
 
 class App extends PureComponent {
@@ -18,19 +19,19 @@ class App extends PureComponent {
   }
   render () {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div>
-          <div>hello, React!</div>
+          <h1>hello, welcome to my React Demo page!</h1>
           <div><Link to="/">Home</Link></div>
-          <div><Link to="/main?a=1">Main</Link></div>
+          <div><Link to="/text-overflow">text-overflow</Link></div>
           <Switch>
             <Route exact path="/main" component={Main} />
-            <Route component={() => <h3>This is Home</h3>} />
+            <Route exact path="/text-overflow" component={TextOverflow} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
-
-export default hot(module)(App)
+const Application = PRODUCTION ? App : hot(module)(App)
+export default Application
