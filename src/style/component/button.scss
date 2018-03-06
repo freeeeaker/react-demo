@@ -1,0 +1,22 @@
+.dh-button {
+  outline: none;
+  transition: opacity ease .3s;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+  &[data-type="normal"] {
+    background: #000;
+    color: #fff;
+  }
+  &[data-size="normal"] {
+    padding: 8px 16px;
+  }
+  &[data-size="big"] {
+    font-size: 16px;
+    padding: 16px 64px;
+  }
+  &[data-size="auto"] {
+    width: 100%;
+  }
+}

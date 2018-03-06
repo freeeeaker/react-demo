@@ -1,0 +1,15 @@
+.footer {
+  height: 79px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  li {
+    font-size: 12px;
+  }
+  .copy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

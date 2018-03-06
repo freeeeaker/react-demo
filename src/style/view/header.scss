@@ -1,7 +1,10 @@
 .header {
-  height: 60px;
-  background: #000;
+  line-height: 60px;
+  background: #24292e;
   color: #fff;
+  .logo {
+    font-size: 24px;
+  }
   .nav {
     float: right;
     line-height: 60px;
@@ -10,6 +13,15 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+  a {
+    color: rgba(255,255,255,.75);
+    &:hover {
+      color: #fff;
+    }
+    &.active {
+      color: #61dafb;
     }
   }
 }

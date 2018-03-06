@@ -9,7 +9,9 @@ import { Route, Link } from 'react-router-dom'
 
 import Main from './page/Main'
 import Examples from './page/Examples'
+import Components from './page/Components'
 import Header from './view/Header'
+import Footer from './view/Footer'
 import { log } from './util/'
 
 require('./style/index.scss')
@@ -23,14 +25,18 @@ class App extends PureComponent {
   render () {
     return (
       <HashRouter>
-        <div>
+        <div className="app-container">
           <Header />
-          <div className="container">
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <Route exact path="/examples" component={Examples} />
-            </Switch>
+          <div className="app-content">
+            <div className="app-box container clear">
+              <Switch>
+                <Route exact path="/" component={Main} />
+                <Route path="/examples" component={Examples} />
+                <Route exact path="/components" component={Components} />
+              </Switch>
+            </div>
           </div>
+          <Footer />
         </div>
       </HashRouter>
     )

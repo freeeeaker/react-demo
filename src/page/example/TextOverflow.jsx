@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 const textOverflow = require('text-overflow')
-// import textOverflow from '../util/text-overflow'
 
-require('../style/page/text-overflow.scss')
+require('@style/page/text-overflow.scss')
 
 const str = 'this is the first paragraph<mention id="sfd">@github</mention>, it not only has plain text\n' 
         + 'this is the second paragraph，break line by \\n\n'

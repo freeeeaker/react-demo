@@ -32,7 +32,8 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
     alias: {
-      // '@lodash': path.resolve(__dirname, '../node_modules/lodash/lodash.min.js')
+      '@component': path.resolve(__dirname, '../src/component/'),
+      '@style': path.resolve(__dirname, '../src/style/')
     }
     // mainFields: ['main']
   },
