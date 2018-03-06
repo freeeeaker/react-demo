@@ -24,6 +24,7 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "text-overflow": "^1.0.4",
     "webpack": "^4.1.0"
   },
   "devDependencies": {

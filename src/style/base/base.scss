@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+
+.horizontal {
+  font-size: 0;
+  & > li {
+    display: inline-block;
+    font-size: 12px;
+  }
+}

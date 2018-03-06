@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-const textOverflow = require('../util/text-overflow')
+const textOverflow = require('text-overflow')
 // import textOverflow from '../util/text-overflow'
 
 require('../style/page/text-overflow.scss')
@@ -67,7 +67,20 @@ export default class TextOverflow extends PureComponent {
       })
     })
   }
-  remove = () => {}
+  remove = () => {
+    if (this.state.userList.length === 8) return
+    this.setState({
+      userList: this.state.userList.slice(0, this.state.userList.length - 1)
+    }, () => {
+      textOverflow(this.l3, {
+        str: this.renderUserList(),
+        addedStr: `等${this.state.userList.length}人觉得很赞`,
+        maxLine: 2,
+        maxWidth: 360,
+        emptyLine: false
+      })
+    })
+  }
   renderUserList () {
     let html = ''
     for (let i = 0; i < this.state.userList.length; i++) {

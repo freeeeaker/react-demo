@@ -8,8 +8,11 @@ import { hot } from 'react-hot-loader'
 import { Route, Link } from 'react-router-dom'
 
 import Main from './page/Main'
-import TextOverflow from './page/TextOverflow'
+import Examples from './page/Examples'
+import Header from './view/Header'
 import { log } from './util/'
+
+require('./style/index.scss')
 
 class App extends PureComponent {
   constructor () {
@@ -21,13 +24,13 @@ class App extends PureComponent {
     return (
       <HashRouter>
         <div>
-          <h1>hello, welcome to my React Demo page!</h1>
-          <div><Link to="/">Home</Link></div>
-          <div><Link to="/text-overflow">text-overflow</Link></div>
-          <Switch>
-            <Route exact path="/main" component={Main} />
-            <Route exact path="/text-overflow" component={TextOverflow} />
-          </Switch>
+          <Header />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/examples" component={Examples} />
+            </Switch>
+          </div>
         </div>
       </HashRouter>
     )

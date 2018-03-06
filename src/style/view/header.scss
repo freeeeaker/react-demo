@@ -1,0 +1,15 @@
+.header {
+  height: 60px;
+  background: #000;
+  color: #fff;
+  .nav {
+    float: right;
+    line-height: 60px;
+    li {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
