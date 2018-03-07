@@ -3,16 +3,15 @@ import * as reactRouter from 'react-router'
 import * as reactRouterDOM from 'react-router-dom'
 import { HashRouter, BrowserRouter, Switch } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
-// console.log(reactRouter)
-// console.log(reactRouterDOM)
+import Loadable from 'react-loadable'
+
 import { Route, Link } from 'react-router-dom'
 
-import Main from './page/Main'
-import Examples from './page/Examples'
-import Components from './page/Components'
 import Header from './view/Header'
 import Footer from './view/Footer'
 import { log } from './util/'
+
+const asyncExamples = 
 
 require('./style/index.scss')
 
@@ -30,9 +29,9 @@ class App extends PureComponent {
           <div className="app-content">
             <div className="app-box container clear">
               <Switch>
-                <Route exact path="/" component={Main} />
-                <Route path="/examples" component={Examples} />
-                <Route exact path="/components" component={Components} />
+                <Route exact path="/" component={Loadable({loader: () => import('./page/Main'),loading: () => <div>Loading...</div>})} />
+                <Route path="/examples" component={Loadable({loader: () => import('./page/Examples'),loading: () => <div>Loading...</div>})} />
+                <Route path="/components" component={Loadable({loader: () => import('./page/Components'),loading: () => <div>Loading...</div>})} />
               </Switch>
             </div>
           </div>

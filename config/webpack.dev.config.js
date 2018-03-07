@@ -8,6 +8,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
+    chunkFilename: 'chunk-[chunkHash].js',
     publicPath: '/'
   },
   module: {
@@ -29,11 +30,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
     modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
     alias: {
       '@component': path.resolve(__dirname, '../src/component/'),
-      '@style': path.resolve(__dirname, '../src/style/')
+      '@style': path.resolve(__dirname, '../src/style/'),
+      '@lodash': path.resolve(__dirname, '../node_modules/lodash/')
     }
     // mainFields: ['main']
   },
